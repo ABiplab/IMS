@@ -54,7 +54,8 @@ Before you begin, ensure you have met the following requirements:
 * for better reference you can import `IMS.postman_collection.json` in postman for details view
 * click on import
 <img width="494" alt="image" src="https://github.com/ABiplab/IMS/assets/35728992/fcea272b-1d91-4add-97c7-add6265d2e90"><br>
-<img width="778" alt="image" src="https://github.com/ABiplab/IMS/assets/35728992/fa829f98-5613-4665-af2f-c24cf23bddba">
 * Drag and drop the collection file or browse for the file
+<img width="778" alt="image" src="https://github.com/ABiplab/IMS/assets/35728992/fa829f98-5613-4665-af2f-c24cf23bddba">
+
 
 
