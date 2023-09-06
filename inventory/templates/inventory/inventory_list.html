@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <h1>Inventory List</h1>
+
+ <a href="{% url 'create_inventory_item' %}">Add new item </a>
+ <table border="1">
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Vendor</th>
+            <th>MRP</th>
+            <th>Batch Num</th>
+            <th>Batch Date</th>
+            <th>Quantity</th>
+            {% if is_store_manager %}
+            <th>Request Type</th>
+            <th>Status</th>
+            
+            {% endif %}
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in inventory_items %}
+            <tr>
+                <td>{{ item.inventory_item.product_id }}</td>
+                <td>{{ item.inventory_item.product_name }}</td>
+                <td>{{ item.inventory_item.vendor }}</td>
+                <td>{{ item.inventory_item.mrp }}</td>
+                <td>{{ item.inventory_item.batch_num }}</td>
+                <td>{{ item.inventory_item.batch_date }}</td>
+                <td>{{ item.inventory_item.quantity }}</td>
+                
+                    {% if is_store_manager %}
+                    <td>{{item.get_request_type_display }}</td>
+                    <td> <form method="post" action="{% url 'update_status' item.id %}">
+                        {% csrf_token %}
+                        <select name="status" onchange="this.form.submit()">
+                            <option value="{{ item.Status.APPROVED }}" {% if item.status == item.Status.APPROVED %}selected{% endif %}>Approved</option>
+                            <option value="{{ item.Status.PENDING }}" {% if item.status == item.Status.PENDING %}selected{% endif %}>Pending</option>
+                        </select>
+                    </form>
+                </td>
+                    {% else %}
+                    {% endif %}
+                
+                <td><a href="{% url 'update_inventory_item' item.inventory_item.id %}">Update</a> ||
+                <a href="{% url 'delete_inventory_item' item.inventory_item.id %}">Delete</a></td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="7">No inventory items available.</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="pagination">
+    <span class="step-links">
+      {% if inventory_items.has_previous %}
+        <a href="?page=1">&laquo; first</a>
+        <a href="?page={{ inventory_items.previous_page_number }}">previous</a>
+      {% endif %}
+  
+      <span class="current-page">
+        Page {{ inventory_items.number }} of {{ inventory_items.paginator.num_pages }}.
+      </span>
+  
+      {% if inventory_items.has_next %}
+        <a href="?page={{ inventory_items.next_page_number }}">next</a>
+        <a href="?page={{ inventory_items.paginator.num_pages }}">last &raquo;</a>
+      {% endif %}
+    </span>
+  </div>
+<br>
+
+
+
+{% endblock %}
+
+{% block javascript %}
+
+{% endblock %}
