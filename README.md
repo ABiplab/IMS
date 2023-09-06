@@ -51,3 +51,6 @@ Before you begin, ensure you have met the following requirements:
 * Add Inventory: `/api/add_inventory/`
 * Fetch Inventory: `/api/fetch_inventory/`
 * Approve Inventory: `/api/approve_inventory/`
+* for better reference you can import `IMS.postman_collection.json` in postman for details view
+<img width="494" alt="image" src="https://github.com/ABiplab/IMS/assets/35728992/fcea272b-1d91-4add-97c7-add6265d2e90">
+*click on import
