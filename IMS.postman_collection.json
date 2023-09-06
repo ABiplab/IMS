@@ -1,0 +1,414 @@
+{
+	"info": {
+		"_postman_id": "309b43d6-9285-41f0-8172-6d796974e6ea",
+		"name": "IMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17947867"
+	},
+	"item": [
+		{
+			"name": "api/login/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Tempuser1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Qwerty@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/api_login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"api_login",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:8000/api/login/",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "Tempuser1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Qwerty@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/api_login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"api_login",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 06 Sep 2023 17:19:54 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "81"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "csrftoken=1lYomgRfCOfPZhRGPvsbO9cgl9pgzfdD; expires=Wed, 04 Sep 2024 17:19:54 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "sessionid=72w3tvwgo26f7hdpgavxk435q5eolpjb; expires=Wed, 20 Sep 2023 17:19:54 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Login successful\",\n    \"token\": \"cbaeab2ae18e849502e7efc228f88fa82df0a1c1\"\n}"
+				}
+			]
+		},
+		{
+			"name": "api/add_inventory/",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 534e73cf829789d09d0bc8b286beaa5e72022bac",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_id\": \"PPID21\",\r\n    \"product_name\": \"Product21\",\r\n    \"vendor\":\"vendor5\",\r\n    \"mrp\": \"456\",\r\n    \"batch_num\":7823,\r\n    \"batch_date\": \"2023-09-06\",\r\n    \"quantity\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/add_inventory/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"add_inventory",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:8000/api/add_inventory/",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 534e73cf829789d09d0bc8b286beaa5e72022bac",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\": \"PPID21\",\r\n    \"product_name\": \"Product21\",\r\n    \"vendor\":\"vendor5\",\r\n    \"mrp\": \"456\",\r\n    \"batch_num\":7823,\r\n    \"batch_date\": \"2023-09-06\",\r\n    \"quantity\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/add_inventory/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"add_inventory",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 06 Sep 2023 17:22:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "150"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 18,\n    \"product_id\": \"PPID21\",\n    \"product_name\": \"Product21\",\n    \"vendor\": \"vendor5\",\n    \"mrp\": \"456.00\",\n    \"batch_num\": \"7823\",\n    \"batch_date\": \"2023-09-06\",\n    \"quantity\": 4\n}"
+				}
+			]
+		},
+		{
+			"name": "api/fetch_inventory/",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 534e73cf829789d09d0bc8b286beaa5e72022bac",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/fetch_inventory/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"fetch_inventory",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "api/fetch_inventory/",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 534e73cf829789d09d0bc8b286beaa5e72022bac",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/fetch_inventory/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"fetch_inventory",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 06 Sep 2023 17:22:46 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, GET"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1526"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"inventory\": [\n        {\n            \"id\": 18,\n            \"product_id\": \"PPID21\",\n            \"product_name\": \"Product21\",\n            \"vendor\": \"vendor5\",\n            \"mrp\": \"456.00\",\n            \"batch_num\": \"7823\",\n            \"batch_date\": \"2023-09-06\",\n            \"quantity\": 4\n        },\n        {\n            \"id\": 17,\n            \"product_id\": \"PPID1\",\n            \"product_name\": \"Product21\",\n            \"vendor\": \"vendor5\",\n            \"mrp\": \"456.00\",\n            \"batch_num\": \"78963\",\n            \"batch_date\": \"2023-09-06\",\n            \"quantity\": 4\n        },\n        {\n            \"id\": 10,\n            \"product_id\": \"PPID9\",\n            \"product_name\": \"Product 9\",\n            \"vendor\": \"Vendor 1\",\n            \"mrp\": \"598.00\",\n            \"batch_num\": \"1236\",\n            \"batch_date\": \"2023-09-06\",\n            \"quantity\": 5\n        },\n        {\n            \"id\": 9,\n            \"product_id\": \"PPID8\",\n            \"product_name\": \"Product 8\",\n            \"vendor\": \"Vendor 2\",\n            \"mrp\": \"563.00\",\n            \"batch_num\": \"1113\",\n            \"batch_date\": \"2023-09-06\",\n            \"quantity\": 23\n        },\n        {\n            \"id\": 8,\n            \"product_id\": \"PPID7\",\n            \"product_name\": \"Product 7\",\n            \"vendor\": \"Vendor 1\",\n            \"mrp\": \"696.00\",\n            \"batch_num\": \"1245\",\n            \"batch_date\": \"2023-09-06\",\n            \"quantity\": 4\n        },\n        {\n            \"id\": 7,\n            \"product_id\": \"PPID6\",\n            \"product_name\": \"Product 6\",\n            \"vendor\": \"Vendor 1\",\n            \"mrp\": \"123.00\",\n            \"batch_num\": \"1245\",\n            \"batch_date\": \"2023-09-06\",\n            \"quantity\": 12\n        },\n        {\n            \"id\": 5,\n            \"product_id\": \"PPID5\",\n            \"product_name\": \"Product 5\",\n            \"vendor\": \"Vendor 1\",\n            \"mrp\": \"344.00\",\n            \"batch_num\": \"1230\",\n            \"batch_date\": \"2023-09-06\",\n            \"quantity\": 12\n        },\n        {\n            \"id\": 4,\n            \"product_id\": \"PPID4\",\n            \"product_name\": \"Product 4\",\n            \"vendor\": \"Vendor 1\",\n            \"mrp\": \"345.00\",\n            \"batch_num\": \"1237\",\n            \"batch_date\": \"2023-09-06\",\n            \"quantity\": 23\n        },\n        {\n            \"id\": 2,\n            \"product_id\": \"PPID2\",\n            \"product_name\": \"Product 2\",\n            \"vendor\": \"Vendor 1\",\n            \"mrp\": \"526.00\",\n            \"batch_num\": \"1239\",\n            \"batch_date\": \"2023-09-06\",\n            \"quantity\": 56\n        },\n        {\n            \"id\": 12,\n            \"product_id\": \"PPID11\",\n            \"product_name\": \"Product 11\",\n            \"vendor\": \"Vendor 3\",\n            \"mrp\": \"568.00\",\n            \"batch_num\": \"1033\",\n            \"batch_date\": \"2023-09-06\",\n            \"quantity\": 4\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "api/approve_inventory/",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 534e73cf829789d09d0bc8b286beaa5e72022bac",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/approve_inventory/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"approve_inventory",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,18 @@
+
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<h1>Create Inventory Item</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ create_item_form.as_p }}
+
+    <input type="submit" value="Create">
+</form>
+{% endblock %}
+
+{% block javascript %}
+
+{% endblock %}
