@@ -34,13 +34,15 @@ Before you begin, ensure you have met the following requirements:
     in Linux user `source venv/bin/activate`   or on Windows, use `venv\Scripts\activate`
 3. Install project dependencies:
     pip install -r requirements.txt
-4. Apply database migrations:
-    python manage.py migrate
+4. Apply database make migrations:
+    Python manage.py makemigrations
 5. Apply database migrations:
+    Python manage.py migrate
+6. Run the development server
     python manage.py runserver
-6. Create a superuser for admin access:
+8. Create a superuser for admin access:
     python manage.py createsuperuser
-7. Run the development server:
+9. Run the development server:
     python manage.py runserver
 
 ## Usage
